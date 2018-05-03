@@ -1,8 +1,5 @@
 import axios from 'axios'
 
-
-
-
 class Services {
 
 	search(query) {
@@ -12,17 +9,12 @@ class Services {
 		})
 	};
 
-	// getOneTrip(id) {
-	// 	console.log("inside services")
-		
-	// 	return axios ({
-	// 		method: "GET",
-	// 		url: `https://travelbudz.herokuapp.com//api/trips/${id}`,
-	// 		headers: {
-	// 			'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// };
+	getHomeData() {	
+		return axios ({
+			method: "GET",
+			url: `/api/home`,
+		})
+	};
 
 	// createTrip(trip) {
 	// 	return axios({

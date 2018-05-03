@@ -6,6 +6,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
+const videoRoutes = require('./routes/videoRoutes')
+
 app.use(logger('dev'));
 
 app.use(
@@ -25,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 
-
+app.use('/api', videoRoutes)
 
 
 

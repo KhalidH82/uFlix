@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Services from 'services';
+import Services from './services';
+import Category from './components/category';
 
 import './App.css';
 
@@ -7,12 +8,30 @@ class App extends Component {
     constructor(props) {
     super(props);
     this.state = {
+      apiData: null,
       apiDataLoaded: false,
-      results: null,
       search: null
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.renderVideos = this.renderVideos.bind(this);
+    
+  }
+
+
+  componentDidMount() {
+    Services.getHomeData()
+    .then(data => {
+      console.log(data)
+      this.setState({
+        apiData: data,
+        apiDataLoaded: true
+      })
+
+    })
+    .catch(err => {
+      console.log(err)
+    })
     
   }
 
@@ -26,10 +45,18 @@ class App extends Component {
     })
   }
 
-  handleSubmit(e){
+  handleFormSubmit(e){
     e.preventDefault();
     console.log(this.state)
 
+}
+
+renderVideos() {
+  return (
+    
+    <Category  videos={this.state.apiData}/>
+    
+    )
 }
 
 
@@ -41,13 +68,11 @@ class App extends Component {
     return (
       <div className="App">
           <h1>uFLix</h1>
-          <form onSubmit={this.handleSubmit}>
-      <input type="text" name="songName" onChange={this.handleChange} placeholder="Search Videos" />
+          <form onSubmit={this.handleFormSubmit}>
+      <input type="text" name="search" onChange={this.handleChange} placeholder="Search Videos" />
       <input type="submit" value="search" />
-
-      
-
       </form>
+      {this.state.apiDataLoaded ? this.renderVideos() : <h1>Loading...</h1>}
       </div>
     );
   }
