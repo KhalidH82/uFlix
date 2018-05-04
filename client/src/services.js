@@ -16,110 +16,48 @@ class Services {
 		})
 	};
 
-	// createTrip(trip) {
-	// 	return axios({
-	// 		method: "POST",
-	// 		url: "/api/trips",
-	// 		data: {
-	// 			destination: trip.destination,
-	// 			date_of_dep: trip.date_of_dep,
-	// 			date_of_arr: trip.date_of_arr,
-	// 			start_city: trip.start_city,
-	// 			end_city: trip.end_city,
-	// 			details: trip.details
-	// 		},
-	// 		headers: {
-	// 			'Authorization': localStorage.jwt,
-	// 		}
-	// 	});
-	// };
+	get44() {
+    	return axios({
+      		method: 'get',
+      		url: '/api/44'
+    })
+  }
 
-	// updateTrip(trip, id) {
-	// 	return axios({
-	// 		method: "PUT",
-	// 		url: `/api/trips/${id}`,
-	// 		data: {
-	// 			destination: trip.destination,
-	// 			date_of_dep: trip.date_of_dep,
-	// 			date_of_arr: trip.date_of_arr,
-	// 			start_city: trip.start_city,
-	// 			end_city: trip.end_city,
-	// 			details: trip.details
-	// 		},
-	// 		headers: {
-	// 			'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// }
+  	get20() {
+    	return axios({
+      		method: 'get',
+      		url: '/api/20'
+    })
+  }
 
-	// deleteTrip(id) {
-	// 	return axios({
-	// 		method: "DELETE",
-	// 		url: `/api/trips/${id}`,
-	// 	headers: {
-	// 		'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// }
+  	get17() {
+    	return axios({
+      		method: 'get',
+      		url: '/api/17'
+    })
+  }
 
-	// logIn(user) {
-	// 	return axios({
-	// 		method: "POST",
-	// 		url: '/api/user_token',
-	// 		data: user
-	// 	})
-	// }
+  	get10() {
+   		 return axios({
+      		method: 'get',
+      		url: '/api/10'
+    })
+  }
 
-	// register(info) {
-	// 	return axios({
-	// 		method: "POST",
-	// 		url: "/api/user",
-	// 		data: info
-	// 	})
-	// }
+  	get23() {
+    	return axios({
+      		method: 'get',
+      		url: '/api/23'
+    })
+  }
 
-	// search(tdata) {
-	// 	console.log('searching 3rd party for API data', tdata);
-	// 	return axios({
-	// 		method: "POST",
-	// 		url: "/api/trips/search",
-	// 		data: tdata
-	// 	})
-	// }
-	
-	// getAllComments(tdata) {
-	// 	return axios ({
-	// 		method: "GET",
-	// 		url: "/api/comments",
-	// 		data: tdata,
-	// 		headers: {
-	// 			'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// };
+  	get25() {
+    	return axios({
+      		method: 'get',
+      		url: '/api/25'
+    })
+  }
 
-	// createComment(comment) {
-	// 	return axios ({
-	// 		method: "POST",
-	// 		url: "/api/comments",
-	// 		data: {
-	// 			comment: comment
-	// 		},
-	// 		headers: {
-	// 			'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// }
-
-	// deleteComment(id) {
-	// 	return axios({
-	// 		method: "DELETE",
-	// 		url: `/api/comments/${id}`,
-	// 	headers: {
-	// 		'Authorization': localStorage.jwt,
-	// 		}
-	// 	})
-	// }
 
 };
 
