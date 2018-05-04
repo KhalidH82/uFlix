@@ -6,9 +6,11 @@
     "axios": "^0.18.0",
     "material-ui": "^0.20.0",
     "react": "^16.3.2",
+    "react-alice-carousel": "^1.9.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
     "react-image-slider": "^0.1.0",
+    "react-responsive-carousel": "^3.1.37",
     "react-scripts": "1.1.4",
     "react-slideshow-image": "^0.2.2",
     "react-youtube": "^7.6.0"
