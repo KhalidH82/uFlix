@@ -3,16 +3,17 @@ import axios from 'axios'
 class Services {
 
 	search(query) {
+    console.log("services", query)
 		return axios ({
 			method: "GET",
-			url: `/api/search/${query}`,
+			url: `/api/search/${query}`
 		})
 	};
 
 	getHomeData() {	
 		return axios ({
 			method: "GET",
-			url: `/api/home`,
+			url: `/api/home`
 		})
 	};
 

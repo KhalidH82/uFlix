@@ -7,17 +7,35 @@ import AliceCarousel from 'react-alice-carousel';
 class Category extends Component {
   renderVideos() {
 
+    if(this.props.isPopular === true) {
+
     return this.props.videos.data.data.map((el,i) => {
-      let link = "https://www.youtube.com/embed/" + el.id.videoId
+      let link = "https://www.youtube.com/watch?v=" + el.id
       console.log(el)
       return (
           <div key={i}>
-            <img alt="" src={el.snippet.thumbnails.high.url} width="320" height="200"></img>
+            <a href={link}><img alt="" src={el.snippet.thumbnails.high.url} width="320" height="200"></img></a>
             <p>{el.snippet.title}</p>
             {/* <iframe title={i} src={link} /> */}
           </div>
       )
     })
+
+  }
+
+  else {
+    return this.props.videos.data.data.map((el,i) => {
+      let link = "https://www.youtube.com/watch?v=" + el.id.videoId
+      console.log(el)
+      return (
+          <div key={i}>
+            <a href={link}><img alt="" src={el.snippet.thumbnails.high.url} width="320" height="200"></img></a>
+            <p>{el.snippet.title}</p>
+            {/* <iframe title={i} src={link} /> */}
+          </div>
+      )
+    })
+  }
 
   }
 

@@ -10,6 +10,7 @@ videoRoutes.get('/17', videoController.get17)
 videoRoutes.get('/10', videoController.get10)
 videoRoutes.get('/23', videoController.get23)
 videoRoutes.get('/25', videoController.get25)
+videoRoutes.get('/search/:query',  videoController.search)
 
 
 module.exports = videoRoutes;

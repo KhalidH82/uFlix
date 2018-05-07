@@ -113,6 +113,15 @@ class App extends Component {
   handleFormSubmit(e){
     e.preventDefault();
     console.log(this.state)
+    let searchQuery = this.state.search
+    searchQuery = searchQuery.replace(/ /gi, "%20")
+    services.search(searchQuery)
+    .then(data => {
+
+    })
+    .catch(err => {
+      console.log(err)
+    })
 
 }
 
@@ -120,19 +129,19 @@ class App extends Component {
     return (
       <div>
         <h2> Most Popular </h2>
-        <Category videos={this.state.apiData}/>
+        <Category isPopular={true} videos={this.state.apiData}/>
         <h2> Movie Trailers </h2>
-        <Category videos={this.state.apiData44}/>
+        <Category isPopular={false} videos={this.state.apiData44}/>
         <h2> Gaming </h2>
-        <Category videos={this.state.apiData20}/>
+        <Category isPopular={false} videos={this.state.apiData20}/>
         <h2> Sports </h2>
-        <Category videos={this.state.apiData17}/>
+        <Category isPopular={false} videos={this.state.apiData17}/>
         <h2> Music </h2>
-        <Category videos={this.state.apiData10}/>
+        <Category isPopular={false} videos={this.state.apiData10}/>
         <h2> Comedy </h2>
-        <Category videos={this.state.apiData23}/>
+        <Category isPopular={false} videos={this.state.apiData23}/>
         <h2> News & Politics </h2>
-        <Category videos={this.state.apiData25}/>
+        <Category isPopular={false} videos={this.state.apiData25}/>
       </div>
     )
   }
@@ -144,7 +153,7 @@ class App extends Component {
         
           <MuiThemeProvider>
            <NavBar />
-           <DropDown />
+         
            </MuiThemeProvider>
 
           <form onSubmit={this.handleFormSubmit}>
