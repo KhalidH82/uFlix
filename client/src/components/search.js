@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import services from '../services'
-
+import Gallery from 'react-grid-gallery';
 
 
 class Search extends Component {
