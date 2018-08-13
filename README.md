@@ -7,4 +7,4 @@ Installation Instructions
 
 <img src="uFlix.png"></a>
 
-This app is a Youtube clone which is made with React and Express. 
+This app is a Youtube clone which is made with React and Express. The app connects to Youtube API returning a list of popular and select genres. You have the option to search by keywords and return a list of Youtube videos matching your criteria.
